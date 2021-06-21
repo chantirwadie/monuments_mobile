@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Monuments
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <h4>Filter</h4>
+  <ion-item>
+    <ion-label>Villes</ion-label>
+    <ion-select aria-placeholder="All" [(ngModel)]="selectedVille" (ionChange)="setVille()">
+      <ion-select-option value="all">all</ion-select-option>
+      <ion-select-option value="Casablanca">Casablanca</ion-select-option>
+      <ion-select-option value="Rabat">Rabat</ion-select-option>
+      <ion-select-option value="Fes">Fes</ion-select-option>
+      <ion-select-option value="Taza">Taza</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-list *ngFor="let monument of monuments">
+    <ion-item button value="{{monument.nom}}" [(ngModel)]="idval" (click)="showDetail(monument.id)">
+      <ion-thumbnail slot="start">
+        <img src="{{monument.image}}">
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{monument.nom}}</h3>
+        <p>{{monument.date}}</p>
+        <mat-icon
+          color="primary"
+          matBadge="number"
+          matBadgePosition="above after"
+          matBadgeColor="accent">
+          {{monument.ville}}
+        </mat-icon>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

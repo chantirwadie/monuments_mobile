@@ -1,0 +1,28 @@
+
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  
+  <ion-div *ngFor="let monument of monuments">
+    <ion-header translucent >
+    <ion-toolbar color='primary' style="--min-height:5cm;">
+      <ion-buttons>
+        <ion-back-button defaultHref="/"></ion-back-button>
+        <ion-title><i>{{monument.nom}}</i></ion-title> 
+      </ion-buttons>
+      <center>
+         <img width="150" height="200" src="{{monument.image}}">
+      </center>
+    </ion-toolbar>
+  </ion-header>
+  
+    <ion-item >
+      <ion-card>
+        {{monument.commentaire}}
+      </ion-card>
+    </ion-item>
+  
+      <!-- <IonButton expand="block" fill="outline">Visite</IonButton> -->
+      <ion-button color="primary" expand="block" (click)="visite()" >Visite</ion-button>
+
+  </ion-div>
+</ion-content>

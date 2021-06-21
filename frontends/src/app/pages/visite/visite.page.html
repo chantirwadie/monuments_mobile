@@ -1,0 +1,27 @@
+
+  
+  <ion-div>
+    <ion-div *ngFor="let monument of monuments">
+      <ion-header translucent >
+      <ion-toolbar color='primary' style="--min-height:3cm;">
+        <ion-buttons>
+          <ion-back-button defaultHref="/"></ion-back-button>
+  
+          <ion-title><i> {{monument.nom}}</i></ion-title> 
+        </ion-buttons>
+        <center>
+        </center>
+      </ion-toolbar>
+    </ion-header>
+    </ion-div>
+  </ion-div>
+
+    <ion-content class="ion-padding">
+      <!-- <ion-item>
+        <ion-input [(ngModel)]="date" type="text" placeholder="date" ></ion-input>
+      </ion-item> -->
+      <ion-item>
+        <ion-input [(ngModel)]="image" type="text" placeholder="image" ></ion-input>
+      </ion-item>
+      <ion-button color="primary" expand="block" (click)="visite()" >visité</ion-button>
+    </ion-content>
